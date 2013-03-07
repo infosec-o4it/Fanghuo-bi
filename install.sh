@@ -10,7 +10,7 @@ cd modsecurity-apache_2.7.2
 make
 make CFLAGS=-DMSC_TEST test
 make install
-cp ../../../mod_security.conf /etc/apache2/mods-aviable/mod_security2.conf
+cp ../../../mod_security.conf /etc/apache2/mods-available/mod_security2.conf
 mkdir /etc/apache2/modsecurity.d/
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
 cp owasp-modsecurity-crs/* /etc/apache2/modsecurity.d/ -rv
