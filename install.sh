@@ -5,11 +5,12 @@ mkdir -p builds/modsecurity
 cd builds/modsecurity/
 wget -c http://www.modsecurity.org/tarball/2.7.2/modsecurity-apache_2.7.2.tar.gz
 tar xvf modsecurity-apache_2.7.2.tar.gz
+cd modsecurity-apache_2.7.2
 ./configure
 make
 make CFLAGS=-DMSC_TEST test
 make install
-cp mod_security.conf /etc/apache2/mods-aviable/mod_security2.conf
+cp ../../mod_security.conf /etc/apache2/mods-aviable/mod_security2.conf
 mkdir /etc/apache2/modsecurity.d/
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
 cp owasp-modsecurity-crs/* /etc/apache2/modsecurity.d/ -rv
