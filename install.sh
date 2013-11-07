@@ -1,11 +1,11 @@
 #!/bin/bash
-apt-get build-dep mod-security-common
-apt-get install git build-essential
+apt-get build-dep mod-security-common apache2
+apt-get install git build-essential apache2 apache2-dev libxml2-dev sudo 
 mkdir -p builds/modsecurity
 cd builds/modsecurity/
-wget -c http://www.modsecurity.org/tarball/2.7.2/modsecurity-apache_2.7.2.tar.gz
-tar xvf modsecurity-apache_2.7.2.tar.gz
-cd modsecurity-apache_2.7.2
+wget -c https://www.modsecurity.org/tarball/2.7.5/modsecurity-apache_2.7.5.tar.gz
+tar xvf modsecurity-apache_2.7.5.tar.gz 
+cd modsecurity-apache_2.7.5
 ./configure
 make
 make CFLAGS=-DMSC_TEST test
